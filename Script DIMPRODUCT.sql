@@ -1,0 +1,41 @@
+SELECT 
+	p.[ProductKey],
+    --,[ProductAlternateKey]
+      p.[ProductSubcategoryKey],
+    --,[WeightUnitMeasureCode]
+    --,[SizeUnitMeasureCode]
+      p.[EnglishProductName] AS [Product Name],
+    --,[SpanishProductName]
+    --,[FrenchProductName]
+    --,[StandardCost]
+    --,[FinishedGoodsFlag]
+    --,[Color]
+    --,[SafetyStockLevel]
+    --,[ReorderPoint]
+    --,[ListPrice]
+    --,[Size]
+    --,[SizeRange]
+    --,[Weight]
+    --,[DaysToManufacture]
+    --,[ProductLine]
+    --,[DealerPrice]
+    --,[Class]
+    --,[Style]
+    --,[ModelName]
+    --,[LargePhoto]
+    --,[EnglishDescription]
+    --,[FrenchDescription]
+    --,[ChineseDescription]
+    --,[ArabicDescription]
+    --,[HebrewDescription]
+    --,[ThaiDescription]
+    --,[GermanDescription]
+    --,[JapaneseDescription]
+    --,[TurkishDescription]
+    --,[StartDate]
+    --,[EndDate]
+    --,[Status]
+	ps.EnglishProductSubcategoryName AS [Sub Category Name]
+FROM [AdventureWorksDW2022].[dbo].[DimProduct] AS p
+LEFT JOIN dbo.DimProductSubcategory AS ps
+ON p.ProductSubcategoryKey = ps.ProductSubcategoryAlternateKey;
